@@ -64,6 +64,14 @@
 		1DE9B9500D341AB8008FEDD4 /* MMWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DE9B94E0D341AB8008FEDD4 /* MMWindow.m */; };
 		1DED78600C6DE43D0079945F /* vimrc in Copy Vim Runtime Files */ = {isa = PBXBuildFile; fileRef = 1DED785F0C6DE43D0079945F /* vimrc */; };
 		1DFE25A50C527BC4003000F7 /* PSMTabBarControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D493DB90C52533B00AB718C /* PSMTabBarControl.framework */; };
+		51D1D92F1350AE1900323896 /* MMFileBrowserController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMFileBrowserController.h; sourceTree = "<group>"; };
+		51D1D9301350AE1900323896 /* MMFileBrowserController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMFileBrowserController.m; sourceTree = "<group>"; };
+		51D1D93C135120FF00323896 /* MMFileBrowserCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMFileBrowserCell.h; sourceTree = "<group>"; };
+		51D1D93D135120FF00323896 /* MMFileBrowserCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMFileBrowserCell.m; sourceTree = "<group>"; };
+		51D410E91615020A008CAF15 /* MMFileBrowserFSItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMFileBrowserFSItem.h; sourceTree = "<group>"; };
+		51D410EA1615020A008CAF15 /* MMFileBrowserFSItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMFileBrowserFSItem.m; sourceTree = "<group>"; };
+		51D410EC1615022B008CAF15 /* MMFileBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMFileBrowser.h; sourceTree = "<group>"; };
+		51D410ED1615022B008CAF15 /* MMFileBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMFileBrowser.m; sourceTree = "<group>"; };
 		5260A93C11BD18A600EE97ED /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5260A93B11BD18A600EE97ED /* Localizable.strings */; };
 		5260A94311BD191500EE97ED /* FindAndReplace.nib in Resources */ = {isa = PBXBuildFile; fileRef = 5260A94211BD191500EE97ED /* FindAndReplace.nib */; };
 		5260A94811BD19D100EE97ED /* FindAndReplace.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5260A94611BD19D100EE97ED /* FindAndReplace.strings */; };
@@ -243,6 +251,10 @@
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		32CA4F630368D1EE00C91783 /* MacVim_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacVim_Prefix.pch; sourceTree = "<group>"; };
+		51D1D9321350AE1900323896 /* MMFileBrowserController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51D1D9301350AE1900323896 /* MMFileBrowserController.m */; };
+		51D1D93E135120FF00323896 /* MMFileBrowserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 51D1D93D135120FF00323896 /* MMFileBrowserCell.m */; };
+		51D410EB1615020A008CAF15 /* MMFileBrowserFSItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 51D410EA1615020A008CAF15 /* MMFileBrowserFSItem.m */; };
+		51D410EE1615022B008CAF15 /* MMFileBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 51D410ED1615022B008CAF15 /* MMFileBrowser.m */; };
 		5260A93911BD189D00EE97ED /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5260A93D11BD18AD00EE97ED /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5260A94411BD191C00EE97ED /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Japanese; path = Japanese.lproj/FindAndReplace.nib; sourceTree = "<group>"; };
@@ -320,6 +332,7 @@
 				1D1474960C56703C0038FA2B /* MacVim.m */,
 				32CA4F630368D1EE00C91783 /* MacVim_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
+				51D410E81615018B008CAF15 /* MMFileBrowser */,
 			);
 			name = "MacVim Source";
 			sourceTree = "<group>";
@@ -463,6 +476,21 @@
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		51D410E81615018B008CAF15 /* MMFileBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				51D1D92F1350AE1900323896 /* MMFileBrowserController.h */,
+				51D1D9301350AE1900323896 /* MMFileBrowserController.m */,
+				51D410E91615020A008CAF15 /* MMFileBrowserFSItem.h */,
+				51D410EA1615020A008CAF15 /* MMFileBrowserFSItem.m */,
+				51D410EC1615022B008CAF15 /* MMFileBrowser.h */,
+				51D410ED1615022B008CAF15 /* MMFileBrowser.m */,
+				51D1D93C135120FF00323896 /* MMFileBrowserCell.h */,
+				51D1D93D135120FF00323896 /* MMFileBrowserCell.m */,
+			);
+			path = MMFileBrowser;
 			sourceTree = "<group>";
 		};
 		528DA28B1426C4DA003380F1 /* KaoriYa Resources */ = {
@@ -643,6 +671,10 @@
 				1D60088B0E96A0B2003763F0 /* MMFindReplaceController.m in Sources */,
 				1DE63FFB0E71820F00959BDB /* MMCoreTextView.m in Sources */,
 				1D44972211FCA9B400B0630F /* MMCoreTextView+ToolTip.m in Sources */,
+				51D1D9321350AE1900323896 /* MMFileBrowserController.m in Sources */,
+				51D1D93E135120FF00323896 /* MMFileBrowserCell.m in Sources */,
+				51D410EB1615020A008CAF15 /* MMFileBrowserFSItem.m in Sources */,
+				51D410EE1615022B008CAF15 /* MMFileBrowser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
