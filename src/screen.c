@@ -10462,6 +10462,7 @@ win_redr_ruler(wp, always)
 number_width(wp)
     win_T	*wp;
 {
+    return 0;
     int		n;
     linenr_T	lnum;
 
